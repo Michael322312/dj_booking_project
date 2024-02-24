@@ -1,0 +1,22 @@
+
+{% extends 'hotel/index.html' %}
+{% block body %}
+<div class = "contrainer">
+    <h1>Rooms:</h1>
+    <ul>
+        {% for hotel in hotels %}
+            <li>{{hotel.name}} rooms:</li>
+            <br>
+            <ul>
+                {% for room in hotel.rooms.all%}
+                    <li>
+                        Room number: {{room.number}}
+                        Price: {{room.price}} UAH / per day
+                    </li>
+                    <br>
+                {% endfor %}
+            </ul>
+        {%endfor%}
+    </ul>
+</div>
+{% endblock body %}
